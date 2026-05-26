@@ -297,23 +297,18 @@
                 <div class="right">
                     <div
                         style="
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-            ">
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            ">
                         <div class="title">User Information</div>
+
 
                         <a
                             href="javascript:void(0);"
                             onclick="window.location.href = 'sync_users.php'"
-                            style="
-                padding: 8px 16px;
-                background-color: #4caf50;
-                color: white;
-                text-decoration: none;
-                border-radius: 4px;
-                display: inline-block;
-              ">
+                            class="verified"
+                            style="padding: 8px 8px; font-size: 13px; text-decoration: none">
                             Sync User Data
                         </a>
                     </div>
