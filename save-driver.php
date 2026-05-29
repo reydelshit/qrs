@@ -58,7 +58,6 @@ $data .= "====================\n";
 $data .= "    DRIVER QR\n";
 $data .= "====================\n\n";
 
-// QR Code commands - FIXED sequence
 $data .= "\x1D\x28\x6B\x04\x00\x31\x41\x32\x00";  // Model 2
 $data .= "\x1D\x28\x6B\x03\x00\x31\x43\x08";      // Size: 8
 $data .= "\x1D\x28\x6B\x03\x00\x31\x45\x33";      // Error correction: H
@@ -88,7 +87,6 @@ if (!file_put_contents($file, $data)) {
     die("Error: Failed to create print file");
 }
 
-// FIXED: Use COPY /B for raw binary printing (NOT PowerShell)
 $printer = "\\\\localhost\\XP_80C";  // UNC path
 $command = "copy /B \"$file\" \"$printer\" 2>&1";
 
@@ -120,4 +118,3 @@ if ($status === 0) {
     echo "Right-click XP_80C printer → Properties → Sharing → Share this printer\n";
     echo "</pre>";
 }
-?>

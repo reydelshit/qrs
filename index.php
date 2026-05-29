@@ -177,7 +177,6 @@
             }
         }
 
-        /* FIXED MODAL STYLES */
         .modal {
             display: none;
             position: fixed;
