@@ -356,7 +356,6 @@
         </div>
     </div>
 
-    <!-- FIXED MODAL - Changed close button ID -->
     <div class="modal" id="myModal">
         <div class="modal-content">
             <button class="close-btn" id="closeModalBtn">&times;</button>
@@ -391,13 +390,13 @@
           max-width: 700px;
           width: 90%;
         ">
-            <div style="font-size: 50px" id="modalIcon">✅</div>
+            <div style="font-size: 50px" id="syncModalIcon">✅</div>
             <div
                 style="font-size: 24px; font-weight: 600; margin: 10px 0"
-                id="modalTitle">
+                id="syncModalTitle">
                 Sync Complete!
             </div>
-            <div style="color: #666" id="modalMessage">New users added:</div>
+            <div style="color: #666" id="syncModalMessage">New users added:</div>
             <div
                 style="
             font-size: 36px;
@@ -405,9 +404,9 @@
             color: #4caf50;
             margin: 10px 0;
           "
-                id="modalCount"></div>
+                id="syncModalCount"></div>
             <div
-                id="modalNames"
+                id="syncModalNames"
                 style="
             max-height: 400px;
             overflow-y: auto;
@@ -440,7 +439,6 @@
         const count = urlParams.get("count");
         const namesParam = urlParams.get("names");
 
-        // FIXED: Renamed function to avoid conflict
         function closeSyncModal() {
             document.getElementById("syncModal").style.display = "none";
             window.history.replaceState({},
@@ -451,11 +449,11 @@
 
         if (syncDone === "done") {
             const modal = document.getElementById("syncModal");
-            const modalCount = document.getElementById("modalCount");
-            const modalMessage = document.getElementById("modalMessage");
-            const modalIcon = document.getElementById("modalIcon");
-            const modalTitle = document.getElementById("modalTitle");
-            const modalNames = document.getElementById("modalNames");
+            const modalCount = document.getElementById("syncModalCount");
+            const modalMessage = document.getElementById("syncModalMessage");
+            const modalIcon = document.getElementById("syncModalIcon");
+            const modalTitle = document.getElementById("syncModalTitle");
+            const modalNames = document.getElementById("syncModalNames");
 
             modal.style.display = "flex";
 
@@ -466,7 +464,6 @@
                 modalIcon.innerHTML = "✅";
                 modalTitle.innerHTML = "Sync Complete!";
 
-                // Display names if available
                 if (namesParam) {
                     const names = JSON.parse(decodeURIComponent(namesParam));
                     if (names.length > 0) {
@@ -519,7 +516,6 @@
         document.getElementById("profile").src = user.profile;
     </script>
 
-    <!-- FIXED MODAL JAVASCRIPT -->
     <script>
         const openTimeIn = document.getElementById("openTimeIn");
         const openTimeOut = document.getElementById("openTimeOut");
